@@ -1,8 +1,7 @@
 <launch>
   <!-- default (zero) ackermann command for default input -->
   <node name="zero_ackermann_cmd" pkg="rostopic" type="rostopic"
-		  args="pub -r 6 ackermann_cmd_mux/input/default ackermann_msgs/AckermannDriveStamped '{header: auto, drive: {steering_angle: 0.0, speed: 0.0} }'" />
-
+		  args='pub -r 6 ackermann_cmd_mux/input/default ackermann_msgs/AckermannDriveStamped -f $(find ackermann_cmd_mux)/cfg/default.txt' />
 
   <arg name="nodelet_manager_name"  default="nodelet_manager"/> 
 
